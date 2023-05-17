@@ -5,4 +5,6 @@ from app_accounts.models import User
 
 @admin.register(User)
 class UserExtendedAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('username', 'email', 'country')
+    list_filter = ('username', 'email', 'country')
+    list_editable = ('country', )
