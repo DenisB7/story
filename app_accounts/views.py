@@ -1,16 +1,9 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views import View
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import UserPassesTestMixin
 
 from app_accounts.forms import UserCreationFormCustom
-
-
-class MainView(View):
-
-    def get(self, request):
-        return render(request, 'main.html', {'username': request.user.username})
 
 
 class RegisterView(UserPassesTestMixin, CreateView):
@@ -22,4 +15,4 @@ class RegisterView(UserPassesTestMixin, CreateView):
         return self.request.user.is_anonymous
 
     def handle_no_permission(self):
-        return redirect('app_accounts:main')
+        return redirect('app_main:main')
