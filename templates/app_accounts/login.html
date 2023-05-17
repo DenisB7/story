@@ -8,5 +8,11 @@
 </style>
 {% endblock %}
 {% block body %}
-
+    <div>
+        <form method="post" action="{% url 'app_accounts:login' %}">
+            {% csrf_token %}
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 {% endblock %}
