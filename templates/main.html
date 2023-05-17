@@ -10,12 +10,12 @@
 {% block body %}
     <div>
         <p>Hello username!</p>
-        <a href="">Logout</a>
+        <a href="{% url 'app_accounts:logout' %}">Logout</a>
     </div>
     <div>
         <p>Don't have an account? Please, register</p>
         <a href="">Register</a>
         <p>Already have an account? Please, login</p>
-        <a href="">Login</a>
+        <a href="{% url 'app_accounts:login' %}">Login</a>
     </div>
 {% endblock %}
