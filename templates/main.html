@@ -9,7 +9,7 @@
 {% endblock %}
 {% block body %}
     <div>
-        <p>Hello username!</p>
+        <p>Hello {{ username }}</p>
         <a href="{% url 'app_accounts:logout' %}">Logout</a>
     </div>
     <div>
