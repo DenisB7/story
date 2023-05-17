@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 
-# Create your views here.
+
 class MainView(View):
 
     def get(self, request):
-        return render(request, 'main.html', {'username': request.user.username})
+        return render(request, 'app_main/main.html', {'username': request.user.username})
