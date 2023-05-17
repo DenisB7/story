@@ -9,13 +9,11 @@
 {% endblock %}
 {% block body %}
     <div>
-        <p>Hello {{ username }}</p>
-        <a href="{% url 'app_accounts:logout' %}">Logout</a>
-    </div>
-    <div>
-        <p>Don't have an account? Please, register</p>
-        <a href="{% url 'app_accounts:register' %}">Register</a>
-        <p>Already have an account? Please, login</p>
-        <a href="{% url 'app_accounts:login' %}">Login</a>
+        <h2>Hello {{ username }}</h2>
+        {% if not username %}
+        <h3>to take a survey, please register</h3>
+        {% else %}
+        <h3>Hooray, you can take a <a href="">survey</a>!</h3>
+        {% endif %}
     </div>
 {% endblock %}
