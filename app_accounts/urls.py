@@ -7,6 +7,11 @@ app_name = 'app_accounts'
 urlpatterns = [
     path('', MainView.as_view(), name="main"),
     path('register', RegisterView.as_view(), name="register"),
-    path("login", LoginView.as_view(template_name="app_accounts/login.html"), name="login"),
+    path("login", LoginView.as_view(
+            template_name="app_accounts/login.html",
+            redirect_authenticated_user=True,
+        ),
+        name="login"
+    ),
     path("logout", LogoutView.as_view(), name="logout"),
 ]
