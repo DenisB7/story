@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from app_accounts.models import User
+
+
+@admin.register(User)
+class UserExtendedAdmin(admin.ModelAdmin):
+    pass
