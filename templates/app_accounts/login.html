@@ -11,6 +11,7 @@
     <div>
         <form method="post" action="{% url 'app_accounts:login' %}">
             {% csrf_token %}
+            {{ form.as_p }}
             <br>
             <button type="submit">Login</button>
         </form>
