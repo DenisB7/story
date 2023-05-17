@@ -1,6 +1,8 @@
 from django.urls import path
 
+from app_accounts.views import MainView
+
 app_name = 'app_accounts'
-# urlpatterns = [ # for account paths
-#     path("path-name", view_here, name="name_of_the_path_here"),
-# ]
+urlpatterns = [
+    path('', MainView.as_view(), name="main"),
+]
