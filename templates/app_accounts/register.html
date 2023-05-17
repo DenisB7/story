@@ -8,5 +8,18 @@
 </style>
 {% endblock %}
 {% block body %}
-
+    <div>
+        <form method="post" action="{% url 'app_accounts:register' %}">
+            {% csrf_token %}
+            {% for field in form %}
+            <p>
+                {{ field.label }}
+                {{ field }}
+                {{ field.errors }}
+            </p>
+            {% endfor %}
+            <br>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
 {% endblock %}
