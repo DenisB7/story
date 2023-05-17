@@ -1,17 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Demo survey page{% endblock %}
 {% block css %}
-    <style>
-        div {
-            text-align: center;
-        }
-        .questions {
-            margin-top: 20px;
-        }
-        .description-question {
-            vertical-align: top;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_main/survey.css' %}">
 {% endblock %}
 {% block body %}
     <div>
