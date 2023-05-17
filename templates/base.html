@@ -3,15 +3,41 @@
     <head>
         <title>{% block title %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            .header-navigation {
+                overflow: hidden;
+                background: linear-gradient(180deg,#000 0,transparent);
+            }
+            .header-navigation a {
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            .header-navigation a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            .header-navigation a.active {
+                background-color: #00a7e1;
+                color: white;
+            }
+        </style>
         {% block css %}
         {% endblock %}
     </head>
-        <body>
-            {% block js_top %}
-            {% endblock %}
-            {% block body %}
-            {% endblock %}
-            {% block js_bottom %}
-            {% endblock %}
-        </body>
+    <body>
+        {% block js_top %}
+        {% endblock %}
+        <header>
+            <div class="header-navigation">
+                <a class="active" href="/">Home</a>
+                <a class="" href="">Survey</a>
+            </div>
+        </header>
+        {% block body %}
+        {% endblock %}
+        {% block js_bottom %}
+        {% endblock %}
+    </body>
 </html>
