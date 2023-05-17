@@ -7,6 +7,7 @@ class CompanyCruise(models.Model):
         ('storylines', 'storylines'),
     )
     name = models.CharField(max_length=20, choices=NAMES_CHOICES)
+    justification = models.TextField()
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="company_cruise")
 
     def __str__(self):
