@@ -5,6 +5,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app_main/survey.css' %}">
 {% endblock %}
 {% block body %}
+    {% if user_favorite_company %}
+    <div>
+        <h2>You did great choice!</h2>
+        <img src="{% static 'images/storylines-logo.png' %}" alt="Storylines logo" width="800px" height="200px" />
+        <h3>Thank you for your time!</h3>
+        {% elif not user_favorite_company %}
+    </div>
     <div>
         <form method="post" action="{% url 'app_main:survey' %}">
             {% csrf_token %}
@@ -23,4 +30,5 @@
             <button type="submit">Save</button>
         </form>
     </div>
+    {% endif %}
 {% endblock %}
