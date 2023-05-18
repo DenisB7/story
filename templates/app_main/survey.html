@@ -5,6 +5,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app_main/survey.css' %}">
 {% endblock %}
 {% block body %}
+    {% block js_top %}
+    <script defer src="{% static 'app_main/survey.js' %}"></script>
+    {% endblock %}
     {% if user_favorite_company %}
     <div>
         <h2>You did great choice!</h2>

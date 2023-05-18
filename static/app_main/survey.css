@@ -7,3 +7,7 @@ div {
 .questions-justification {
     vertical-align: top;
 }
+span.congratulations {
+    position: absolute;
+    color: blue;
+}
