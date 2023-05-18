@@ -11,4 +11,4 @@ class FavoriteCruiseCompany(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="company_cruise")
 
     def __str__(self):
-        return f"{self.user.username}"
+        return f"USER {self.user.username} FAVORITE CRUISE COMPANY {self.company_name}"
