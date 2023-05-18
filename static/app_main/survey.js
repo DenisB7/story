@@ -2,11 +2,20 @@ let companiesSelect = document.getElementById("company");
 
 
 function praiseTheUser() {
-    if (this.value == "storylines") {
-        span = document.createElement("span");
-        span.className = "congratulations";
+    let span = document.getElementById("congratulations");
+    if (!Object.is(span, null)) {
+        span.className = "";
         span.textContent = "Great choice!";
+    } else {
+        span = document.createElement("span");
+        span.id = "congratulations";
+        span.textContent = "Great choice!";
+    }
+    if (this.value == "storylines") {
         this.after(span);
+    } else {
+        span.className = "return";
+        span.textContent = "return you answer!";
     }
 };
 
