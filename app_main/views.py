@@ -19,7 +19,13 @@ class SurveyView(LoginRequiredMixin, View):
         return redirect("app_main:main")
 
     def get(self, request):
-        return render(request, 'app_main/survey.html')
+        try:
+            user_favorite_company = FavoriteCruiseCompany.objects.get(user_id=request.user.pk)
+        except FavoriteCruiseCompany.DoesNotExist:
+            user_favorite_company = ""
+        if user_favorite_company:
+            user_favorite_company = user_favorite_company.company_name
+        return render(request, 'app_main/survey.html', {'user_favorite_company': user_favorite_company})
 
     def post(self, request):
         company_name = request.POST.get('company')
