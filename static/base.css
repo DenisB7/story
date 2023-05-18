@@ -1,6 +1,7 @@
 .header-navigation {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     background: linear-gradient(180deg,#000 0,transparent);
 }
 .header-navigation a {
