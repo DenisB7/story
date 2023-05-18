@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from app_main.models import CompanyCruise
+from app_main.models import FavoriteCruiseCompany
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -25,12 +25,9 @@ class SurveyView(LoginRequiredMixin, View):
         company_name = request.POST.get('company')
         justification = request.POST.get('justification')
         user_id = request.user.pk
-        result_of_survey_save = (
-            CompanyCruise.objects
-            .filter(user_id=user_id)
-            .update(
-                name=company_name,
-                justification=justification,
-            )
+        FavoriteCruiseCompany.objects.create(
+            user_id=user_id,
+            company_name=company_name,
+            justification=justification,
         )
         return redirect('app_main:survey')
