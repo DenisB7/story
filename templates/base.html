@@ -15,9 +15,11 @@
             <div class="header-navigation">
                 <a class="{{ main_active }}" href="{% url 'app_main:main' %}">Home</a>
                 <a class="{{ survey_active }}" href="{% url 'app_main:survey' %}">Survey</a>
-                <a href="{% url 'app_accounts:logout' %}">Logout</a>
-                <a class="{{ login_active }}" href="{% url 'app_accounts:login' %}">Login</a>
-                <a class="{{ register_active }}" href="{% url 'app_accounts:register' %}">Register</a>
+                <div class="to-the-right">
+                    <a href="{% url 'app_accounts:logout' %}">Logout</a>
+                    <a class="{{ login_active }}" href="{% url 'app_accounts:login' %}">Login</a>
+                    <a class="{{ register_active }}" href="{% url 'app_accounts:register' %}">Register</a>
+                </div>
             </div>
         </header>
         {% block body %}

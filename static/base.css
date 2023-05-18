@@ -8,6 +8,10 @@
     padding: 14px 16px;
     text-decoration: none;
 }
+.header-navigation .to-the-right {
+    margin-left: auto;
+    display: flex;
+}
 .header-navigation a:hover {
     background-color: #ddd;
     color: black;
