@@ -10,7 +10,7 @@
         {% if not username %}
         <h3>to take a survey, please register and login!</h3>
         {% else %}
-        <h3>Hooray, you can take a <a href="{% url 'app_main:survey' %}">survey</a>!</h3>
+        <h3>Hooray, you can take a <a href="{% url 'app_main:survey' %}">survey</a> or check the result there!</h3>
         {% endif %}
     </div>
 {% endblock %}
